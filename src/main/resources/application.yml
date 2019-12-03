@@ -1,0 +1,23 @@
+
+server:
+  port: 9090
+  # Tomcat specifics
+  tomcat:
+    # 打开Tomcat的Access日志，并可以设置日志格式的方法
+    # accessLogEnabled: false
+    protocolHeader: x-forwarded-proto
+    remoteIpHeader: x-forwarded-for
+    basedir:
+    backgroundProcessorDelay: 30
+  servlet:
+    context-path: /
+    session:
+      timeout: 300
+
+logging:
+  config: classpath:log4j2.xml
+
+
+spring:
+  profiles:
+    active: dev
